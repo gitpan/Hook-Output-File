@@ -10,7 +10,7 @@ use File::Spec ();
 
 our @ISA = qw(Tie::StdHandle);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub redirect {
     my ($class, %opts) = @_;
@@ -30,8 +30,8 @@ EOT
     tie *{$caller.'::STDOUT'}, 'Hook::Output::File';
     tie *{$caller.'::STDERR'}, 'Hook::Output::File';
 
-    open(STDOUT, ">>", $opts{stdout}) or croak "Can't redirect STDOUT: $!";
-    open(STDERR, ">>", $opts{stderr}) or croak "Can't redirect STDERR: $!";
+    open(STDOUT, '>>', $opts{stdout}) or croak "Can't redirect STDOUT: $!";
+    open(STDERR, '>>', $opts{stderr}) or croak "Can't redirect STDERR: $!";
 
     select(STDERR); $| = 1;
     select(STDOUT); $| = 1;
@@ -53,7 +53,7 @@ __END__
 
 =head1 NAME
 
-Hook::Output::File - Redirect STDIN/STDOUT to a file
+Hook::Output::File - Redirect STDOUT/STDERR to a file
 
 =head1 SYNOPSIS
 
@@ -81,7 +81,7 @@ Hook::Output::File - Redirect STDIN/STDOUT to a file
 
 =head1 DESCRIPTION
 
-C<Hook::Output::File> redirects STDIN/STDOUT to a file.
+C<Hook::Output::File> redirects STDOUT/STDERR to a file.
 
 =head1 METHODS
 

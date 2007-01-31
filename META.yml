@@ -1,9 +1,9 @@
 ---
 name: Hook-Output-File
-version: 0.01
+version: 0.02
 author:
   - 'Steven Schubiger <schubiger@cpan.org>'
-abstract: Redirect STDIN/STDOUT to a file
+abstract: Redirect STDOUT/STDERR to a file
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
@@ -19,7 +19,7 @@ recommends:
 provides:
   Hook::Output::File:
     file: lib/Hook/Output/File.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2805
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

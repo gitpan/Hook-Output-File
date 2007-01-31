@@ -1,5 +1,5 @@
 NAME
-    Hook::Output::File - Redirect STDIN/STDOUT to a file
+    Hook::Output::File - Redirect STDOUT/STDERR to a file
 
 SYNOPSIS
      use Hook::Output::File;
@@ -25,7 +25,7 @@ SYNOPSIS
     }
 
 DESCRIPTION
-    "Hook::Output::File" redirects STDIN/STDOUT to a file.
+    "Hook::Output::File" redirects STDOUT/STDERR to a file.
 
 METHODS
   redirect
