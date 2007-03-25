@@ -49,6 +49,9 @@ METHODS
 
      }   # implicitly uninstalls hook
 
+BUGS & CAVEATS
+    Doesn't work in a forked environment, such as the case with daemons.
+
 SEE ALSO
     perltie
 
